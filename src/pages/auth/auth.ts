@@ -7,7 +7,7 @@ import {
   LoggedInCallback,
   RegistrationUser
 } from "../../providers/cognito.service";
-import {ControlPanelComponent} from "../controlpanel/controlpanel";
+import {ControlPanelPage} from "../controlpanel/controlpanel";
 import {EventsService} from "../../providers/events.service";
 
 
@@ -55,7 +55,7 @@ export class LoginPage implements CognitoCallback, LoggedInCallback {
       console.log("result: " + message);
     } else { //success
       console.log("Redirect to ControlPanelComponent");
-      this.nav.setRoot(ControlPanelComponent);
+      this.nav.setRoot(ControlPanelPage);
     }
   }
 
@@ -63,7 +63,7 @@ export class LoginPage implements CognitoCallback, LoggedInCallback {
     console.log("The user is logged in: " + isLoggedIn);
     if (isLoggedIn) {
       this.eventService.sendLoggedInEvent();
-      this.nav.setRoot(ControlPanelComponent);
+      this.nav.setRoot(ControlPanelPage);
     }
   }
 

@@ -4,7 +4,7 @@ import {NavController} from "ionic-angular";
 @Component({
   templateUrl: 'controlpanel.html'
 })
-export class ControlPanelComponent {
+export class ControlPanelPage {
 
 
   constructor(public nav:NavController) {

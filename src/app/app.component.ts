@@ -3,7 +3,7 @@ import {Events, NavController, Platform, MenuController} from "ionic-angular";
 import {Splashscreen} from "ionic-native";
 import {LoginPage, LogoutPage} from "../pages/auth/auth";
 import {AwsUtil} from "../providers/aws.service";
-import {ControlPanelComponent} from "../pages/controlpanel/controlpanel";
+import {ControlPanelPage} from "../pages/controlpanel/controlpanel";
 
 
 @Component({
@@ -12,9 +12,9 @@ import {ControlPanelComponent} from "../pages/controlpanel/controlpanel";
 export class MyApp {
   @ViewChild(NavController) navCtrl;
   public loginPage = LoginPage;
-  public homePage = ControlPanelComponent;
+  public homePage = ControlPanelPage;
   public logoutPage = LogoutPage;
-  public settingsPage = ControlPanelComponent;
+  public settingsPage = ControlPanelPage;
 
   public rootPage:any;
 

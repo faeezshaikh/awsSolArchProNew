@@ -17,7 +17,7 @@ import {
   ForgotPasswordStep1Page,
   ForgotPasswordStep2Page
 } from "../pages/auth/auth";
-import {ControlPanelComponent} from "../pages/controlpanel/controlpanel";
+import {ControlPanelPage} from "../pages/controlpanel/controlpanel";
 import {Storage} from "@ionic/storage";
 import {EventsService} from "../providers/events.service";
 
@@ -31,7 +31,7 @@ import {EventsService} from "../providers/events.service";
     ResendCodePage,
     ForgotPasswordStep1Page,
     ForgotPasswordStep2Page,
-    ControlPanelComponent
+    ControlPanelPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -46,7 +46,7 @@ import {EventsService} from "../providers/events.service";
     ResendCodePage,
     ForgotPasswordStep1Page,
     ForgotPasswordStep2Page,
-    ControlPanelComponent
+    ControlPanelPage
   ],
   providers: [CognitoUtil,
     AwsUtil,
