@@ -10,7 +10,7 @@ import {
 import {AwsUtil} from "../providers/aws.service";
 import {
   LoginComponent,
-  LogoutComponent,
+  LogoutPage,
   RegisterComponent,
   ConfirmRegistrationComponent,
   ResendCodeComponent,
@@ -25,7 +25,7 @@ import {EventsService} from "../providers/events.service";
   declarations: [
     MyApp,
     LoginComponent,
-    LogoutComponent,
+    LogoutPage,
     RegisterComponent,
     ConfirmRegistrationComponent,
     ResendCodeComponent,
@@ -40,7 +40,7 @@ import {EventsService} from "../providers/events.service";
   entryComponents: [
     MyApp,
     LoginComponent,
-    LogoutComponent,
+    LogoutPage,
     RegisterComponent,
     ConfirmRegistrationComponent,
     ResendCodeComponent,

@@ -83,7 +83,7 @@ export class LoginComponent implements CognitoCallback, LoggedInCallback {
 @Component({
   template: ''
 })
-export class LogoutComponent implements LoggedInCallback {
+export class LogoutPage implements LoggedInCallback {
 
   constructor(public navCtrl:NavController, public userService:UserLoginService) {
     this.userService.isAuthenticated(this)
