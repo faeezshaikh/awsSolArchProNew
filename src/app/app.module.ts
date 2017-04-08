@@ -9,7 +9,7 @@ import {
 } from "../providers/cognito.service";
 import {AwsUtil} from "../providers/aws.service";
 import {
-  LoginComponent,
+  LoginPage,
   LogoutPage,
   RegisterComponent,
   ConfirmRegistrationComponent,
@@ -24,7 +24,7 @@ import {EventsService} from "../providers/events.service";
 @NgModule({
   declarations: [
     MyApp,
-    LoginComponent,
+    LoginPage,
     LogoutPage,
     RegisterComponent,
     ConfirmRegistrationComponent,
@@ -39,7 +39,7 @@ import {EventsService} from "../providers/events.service";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginComponent,
+    LoginPage,
     LogoutPage,
     RegisterComponent,
     ConfirmRegistrationComponent,

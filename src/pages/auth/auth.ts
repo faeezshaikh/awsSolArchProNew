@@ -13,7 +13,7 @@ import {EventsService} from "../../providers/events.service";
 @Component({
   templateUrl: 'login.html'
 })
-export class LoginComponent implements CognitoCallback, LoggedInCallback {
+export class LoginPage implements CognitoCallback, LoggedInCallback {
   email:string;
   password:string;
 
@@ -93,7 +93,7 @@ export class LogoutPage implements LoggedInCallback {
     if (isLoggedIn) {
       this.userService.logout();
     }
-    this.navCtrl.setRoot(LoginComponent)
+    this.navCtrl.setRoot(LoginPage)
   }
 }
 
@@ -147,7 +147,7 @@ export class RegisterComponent implements CognitoCallback {
   }
 
   navToLogin() {
-    this.nav.push(LoginComponent);
+    this.nav.push(LoginPage);
   }
 
   doAlert(title:string, message:string) {
@@ -196,11 +196,11 @@ export class ConfirmRegistrationComponent {
       let email = this.navParam.get("email");
 
       if (email != null)
-        this.nav.push(LoginComponent, {
+        this.nav.push(LoginPage, {
           'email': email
         });
       else
-        this.nav.push(LoginComponent);
+        this.nav.push(LoginPage);
     }
   }
 
@@ -213,7 +213,7 @@ export class ConfirmRegistrationComponent {
   }
 
   navToLogin() {
-    this.nav.push(LoginComponent);
+    this.nav.push(LoginPage);
   }
 
   doAlert(title:string, message:string) {
@@ -258,7 +258,7 @@ export class ResendCodeComponent implements CognitoCallback {
   }
 
   navToLogin() {
-    this.nav.push(LoginComponent);
+    this.nav.push(LoginPage);
   }
 
   doAlert(title:string, message:string) {
@@ -296,7 +296,7 @@ export class ForgotPasswordStep1Component implements CognitoCallback {
   }
 
   navToLogin() {
-    this.nav.push(LoginComponent);
+    this.nav.push(LoginPage);
   }
 
   doAlert(title:string, message:string) {
@@ -330,7 +330,7 @@ export class ForgotPasswordStep2Component implements CognitoCallback {
     if (message != null) { //error
       this.doAlert("Verification Code", message);
     } else { //success
-      this.nav.push(LoginComponent);
+      this.nav.push(LoginPage);
     }
   }
 
@@ -339,7 +339,7 @@ export class ForgotPasswordStep2Component implements CognitoCallback {
   }
 
   navToLogin() {
-    this.nav.push(LoginComponent);
+    this.nav.push(LoginPage);
   }
 
   doAlert(title:string, message:string) {
