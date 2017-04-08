@@ -11,11 +11,11 @@ import {AwsUtil} from "../providers/aws.service";
 import {
   LoginPage,
   LogoutPage,
-  RegisterComponent,
-  ConfirmRegistrationComponent,
-  ResendCodeComponent,
-  ForgotPasswordStep1Component,
-  ForgotPasswordStep2Component
+  RegisterPage,
+  ConfirmRegistrationPage,
+  ResendCodePage,
+  ForgotPasswordStep1Page,
+  ForgotPasswordStep2Page
 } from "../pages/auth/auth";
 import {ControlPanelComponent} from "../pages/controlpanel/controlpanel";
 import {Storage} from "@ionic/storage";
@@ -26,11 +26,11 @@ import {EventsService} from "../providers/events.service";
     MyApp,
     LoginPage,
     LogoutPage,
-    RegisterComponent,
-    ConfirmRegistrationComponent,
-    ResendCodeComponent,
-    ForgotPasswordStep1Component,
-    ForgotPasswordStep2Component,
+    RegisterPage,
+    ConfirmRegistrationPage,
+    ResendCodePage,
+    ForgotPasswordStep1Page,
+    ForgotPasswordStep2Page,
     ControlPanelComponent
   ],
   imports: [
@@ -41,11 +41,11 @@ import {EventsService} from "../providers/events.service";
     MyApp,
     LoginPage,
     LogoutPage,
-    RegisterComponent,
-    ConfirmRegistrationComponent,
-    ResendCodeComponent,
-    ForgotPasswordStep1Component,
-    ForgotPasswordStep2Component,
+    RegisterPage,
+    ConfirmRegistrationPage,
+    ResendCodePage,
+    ForgotPasswordStep1Page,
+    ForgotPasswordStep2Page,
     ControlPanelComponent
   ],
   providers: [CognitoUtil,

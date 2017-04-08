@@ -10,6 +10,13 @@ import {
 import {ControlPanelComponent} from "../controlpanel/controlpanel";
 import {EventsService} from "../../providers/events.service";
 
+
+
+
+
+////////////// [ Login Page ] ////////////////
+
+
 @Component({
   templateUrl: 'login.html'
 })
@@ -61,11 +68,11 @@ export class LoginPage implements CognitoCallback, LoggedInCallback {
   }
 
   navToRegister() {
-    this.nav.push(RegisterComponent);
+    this.nav.push(RegisterPage);
   }
 
   navToForgotPassword() {
-    this.nav.push(ForgotPasswordStep1Component);
+    this.nav.push(ForgotPasswordStep1Page);
   }
 
   doAlert(title:string, message:string) {
@@ -79,6 +86,9 @@ export class LoginPage implements CognitoCallback, LoggedInCallback {
   }
 
 }
+
+
+////////////// [ Logout Page ] ////////////////
 
 @Component({
   template: ''
@@ -97,6 +107,9 @@ export class LogoutPage implements LoggedInCallback {
   }
 }
 
+
+
+////////////// [ Register Page ] ////////////////
 /**
  * This component is responsible for displaying and controlling
  * the registration of the user.
@@ -106,7 +119,7 @@ export class LogoutPage implements LoggedInCallback {
   templateUrl: 'registration.html',
   providers: [UserRegistrationService]
 })
-export class RegisterComponent implements CognitoCallback {
+export class RegisterPage implements CognitoCallback {
   registrationUser:RegistrationUser;
 
   constructor(public nav:NavController,
@@ -135,7 +148,7 @@ export class RegisterComponent implements CognitoCallback {
       this.doAlert("Registration", message);
     } else { //success
       console.log("in callback...result: " + result);
-      this.nav.push(ConfirmRegistrationComponent, {
+      this.nav.push(ConfirmRegistrationPage, {
         'username': result.user.username,
         'email': this.registrationUser.email
       });
@@ -143,7 +156,7 @@ export class RegisterComponent implements CognitoCallback {
   }
 
   navToResendCode() {
-    this.nav.push(ResendCodeComponent);
+    this.nav.push(ResendCodePage);
   }
 
   navToLogin() {
@@ -161,11 +174,14 @@ export class RegisterComponent implements CognitoCallback {
 
 }
 
+
+////////////// [ Confirm Register Page ] ////////////////
+
 @Component({
   templateUrl: 'confirmRegistration.html',
   providers: [UserRegistrationService]
 })
-export class ConfirmRegistrationComponent {
+export class ConfirmRegistrationPage {
   confirmationCode:string;
 
   constructor(public nav:NavController, public userRegistration:UserRegistrationService, public navParam:NavParams, public alertCtrl:AlertController) {
@@ -205,11 +221,11 @@ export class ConfirmRegistrationComponent {
   }
 
   navToResendCode() {
-    this.nav.push(ResendCodeComponent);
+    this.nav.push(ResendCodePage);
   }
 
   navToRegister() {
-    this.nav.push(RegisterComponent);
+    this.nav.push(RegisterPage);
   }
 
   navToLogin() {
@@ -227,11 +243,14 @@ export class ConfirmRegistrationComponent {
 
 }
 
+
+////////////// [ Resend Code Page ] ////////////////
+
 @Component({
   templateUrl: 'resendCode.html',
   providers: [UserRegistrationService]
 })
-export class ResendCodeComponent implements CognitoCallback {
+export class ResendCodePage implements CognitoCallback {
   email:string;
 
   constructor(public nav:NavController,
@@ -247,14 +266,14 @@ export class ResendCodeComponent implements CognitoCallback {
     if (error != null) {
       this.doAlert("Resend", "Something went wrong...please try again");
     } else {
-      this.nav.push(ConfirmRegistrationComponent, {
+      this.nav.push(ConfirmRegistrationPage, {
         'email': this.email
       });
     }
   }
 
   navToRegister() {
-    this.nav.push(RegisterComponent);
+    this.nav.push(RegisterPage);
   }
 
   navToLogin() {
@@ -272,10 +291,13 @@ export class ResendCodeComponent implements CognitoCallback {
 
 }
 
+
+////////////// [ Forgot Password Step1 Page ] ////////////////
+
 @Component({
   templateUrl: 'forgotPassword.html'
 })
-export class ForgotPasswordStep1Component implements CognitoCallback {
+export class ForgotPasswordStep1Page implements CognitoCallback {
   email:string;
 
   constructor(public nav:NavController, public alertCtrl:AlertController, public userService:UserLoginService) {
@@ -287,12 +309,12 @@ export class ForgotPasswordStep1Component implements CognitoCallback {
 
   cognitoCallback(message:string, result:any) {
     if (message == null && result == null) { //error
-      this.nav.push(ForgotPasswordStep2Component, {'email': this.email})
+      this.nav.push(ForgotPasswordStep2Page, {'email': this.email})
     }
   }
 
   navToRegister() {
-    this.nav.push(RegisterComponent);
+    this.nav.push(RegisterPage);
   }
 
   navToLogin() {
@@ -309,10 +331,12 @@ export class ForgotPasswordStep1Component implements CognitoCallback {
   }
 }
 
+
+////////////// [ Forgot Password Step2 Page ] ////////////////
 @Component({
   templateUrl: 'forgotPasswordStep2.html'
 })
-export class ForgotPasswordStep2Component implements CognitoCallback {
+export class ForgotPasswordStep2Page implements CognitoCallback {
 
   verificationCode:string;
   email:string;
@@ -335,7 +359,7 @@ export class ForgotPasswordStep2Component implements CognitoCallback {
   }
 
   navToRegister() {
-    this.nav.push(RegisterComponent);
+    this.nav.push(RegisterPage);
   }
 
   navToLogin() {
