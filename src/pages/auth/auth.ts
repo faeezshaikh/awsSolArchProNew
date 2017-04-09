@@ -33,6 +33,12 @@ export class LoginPage implements CognitoCallback, LoggedInCallback {
     if (navParam != null && navParam.get("email") != null)
       this.email = navParam.get("email");
 
+      // If the user is signed in, dont prompt for creds, send them to home page
+    if (this.userService.isAuthenticated(this)) {
+      this.eventService.sendLoggedInEvent();
+      this.nav.setRoot(ControlPanelPage);
+    }
+
   }
 
   ionViewLoaded() {
